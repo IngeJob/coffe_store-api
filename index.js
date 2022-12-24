@@ -1,12 +1,12 @@
 const express = require('express')
 const cors = require('cors');
 const fileUpload = require('express-fileupload')
-const router = require('./routes/index.router')
+const router = require('./src/routes/index.router')
 require('dotenv').config();
 
 //Initializations
 const app = express();
-require('./database');
+require('./src/database');
 
 //Settings
 app.set('port', process.env.PORT || 5000);
