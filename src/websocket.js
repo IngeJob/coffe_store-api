@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors');
 const { Server } = require('socket.io')
 const http = require('http');
 const { getTokenData } = require('./config/jwt.config')
@@ -13,6 +14,9 @@ const io = new Server(server, {
 
 //Settings
 app.set('port', process.env.PORT || 8000);
+app.use(cors({
+  origin: '*'
+}))
 
 //Middleware
 io.use( async (socket, next) => {
