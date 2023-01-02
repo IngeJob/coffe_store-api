@@ -7,6 +7,7 @@ require('dotenv').config();
 //Initializations
 const app = express();
 require('./src/database');
+require('./src/websocket');
 
 //Settings
 app.set('port', process.env.PORT || 5000);

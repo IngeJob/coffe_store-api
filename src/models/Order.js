@@ -34,7 +34,7 @@ const OrderSchema = new Schema(
     },
     status:{
       type: String,
-      default: 'Entregado'
+      default: 'Empaquetado'
     },
     orderList: [{
       amount: {
@@ -62,6 +62,10 @@ const OrderSchema = new Schema(
     user: {
       type: Schema.Types.ObjectId,
       ref: 'User'
+    },
+    deliveryman: {
+      type: Schema.Types.ObjectId,
+      ref: 'Deliveryman'
     }
   },
   {
